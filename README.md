@@ -52,7 +52,7 @@ The goal: secure a simulated corporate infrastructure hosting a web application 
 | [Project-Scope.pdf](./Project-Scope.pdf) | Defines objectives, success criteria, and technical scope |
 | [Project-Proposal.pdf](./Project-Proposal.pdf) | Initial business and technical justification for the Zero-Trust model |
 | [Product-Overview.pdf](./Product-Overview.pdf) | Executive summary of architecture and design choices |
-| [Cloudflare-Configuration-Steps.pdf](./Cloudflare-Configuration-Steps.pdf) | Hands-on guide for Cloudflare DNSSEC, WAF, and Tunnel configuration |
+| [Cloudflare-Configuration-Steps.pdf](./CloudFlare-Configuration-Steps.pdf) | Hands-on guide for Cloudflare DNSSEC, WAF, and Tunnel configuration |
 | [Final-Report.pdf](./Final-Report.pdf) | Complete documentation covering design, results, and risk mitigation |
 | [Final-Presentation-Slides.pptx](./Final-Presentation-Slides.pptx) | Final presentation used during project defense |
 
