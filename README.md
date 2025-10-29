@@ -1,68 +1,98 @@
 # 🛡️ Zero-Trust Cloud Infrastructure (AWS + Cloudflare + GoDaddy)
 
-A capstone project implementing a **Zero-Trust security architecture** that integrates **AWS EC2**, **Cloudflare WAF/Tunnel/Access**, and **GoDaddy DNS**.  
-Designed to protect high-risk business environments (finance, e-commerce) by enforcing **TLS 1.3 encryption**, **DNSSEC**, and **identity-based access via GitHub SSO**.
+This repository showcases a **Zero-Trust Cloud Infrastructure** designed and implemented as part of a postgraduate **Cybersecurity and Threat Management** capstone at **Seneca Polytechnic**.  
+The project demonstrates a **real-world deployment of Zero-Trust principles** — integrating **AWS**, **Cloudflare Zero Trust**, and **GoDaddy DNS** — to eliminate public exposure, ensure encrypted communications, and enforce identity-based access control.
 
 ---
 
-## 🏗️ Architecture Overview
+## 📘 Project Context
+Organizations adopting cloud computing often face challenges balancing accessibility and security.  
+Traditional perimeter security models fail against modern threats where insider risks, stolen credentials, and lateral movement dominate.
 
-### Components
-- **AWS EC2 Instance:** Secure hosting for the web service with limited HTTPS access.  
-- **Cloudflare WAF & Tunnel:** Masks public IPs, routes encrypted traffic, enforces Zero Trust rules.  
-- **GitHub SSO Integration:** Centralized user identity management via OAuth2.  
-- **GoDaddy DNS:** Managed domain with DNSSEC for tamper-proof resolution.  
-- **AWS GuardDuty + CloudTrail:** Continuous threat detection and event logging.
+This project applies the **Zero-Trust security model** — *“never trust, always verify”* — by designing a multi-layered cloud environment with:
+- Identity-based authentication  
+- Continuous monitoring  
+- Encrypted traffic paths  
+- Minimal public attack surface  
 
----
-
-## ⚙️ Implementation Highlights
-| Phase | Summary |
-|-------|----------|
-| **Infrastructure Setup** | Deployed AWS EC2, restricted Security Groups, configured Elastic IP. |
-| **Cloudflare Integration** | Enabled WAF, TLS 1.3 Full-Strict, DNSSEC, and caching for performance. |
-| **SSO & Access Control** | Integrated GitHub SSO via Cloudflare Access; enforced role-based access. |
-| **Monitoring & IR Plan** | Configured CloudTrail, GuardDuty, CloudWatch; authored 12-step IR Plan. |
+The goal: secure a simulated corporate infrastructure hosting a web application while maintaining accessibility for verified users.
 
 ---
 
-## 📊 Results
-- Reduced public attack surface by **~90%**.  
-- Achieved full **end-to-end encryption** with TLS 1.3 and DNSSEC.  
-- Implemented **Zero-Trust user verification** and **centralized monitoring**.  
-- Designed for **GDPR / PCI DSS compliance**.
+## ⚙️ Implementation Overview
+
+### 🔹 1. AWS Cloud Infrastructure
+- Provisioned **Amazon EC2 instance** as the secure backend host.  
+- Applied **least-privilege Security Groups** allowing inbound traffic only over HTTPS (443) and SSH (22) from trusted IPs.  
+- Configured **IAM roles** separating administrative and operational privileges.  
+- Activated **CloudWatch**, **CloudTrail**, and **GuardDuty** for continuous logging, anomaly detection, and compliance visibility.  
+- Allocated an **Elastic IP** and connected it to Cloudflare via encrypted tunnel for secure external access.
+
+### 🔹 2. Cloudflare Zero Trust Configuration
+- Onboarded the **GoDaddy domain** into Cloudflare DNS and enabled **DNSSEC** to protect DNS integrity.  
+- Enforced **TLS 1.3 (Full-Strict)** for full encryption between users, Cloudflare, and origin.  
+- Deployed **Cloudflare Tunnel** to hide the origin IP — removing any direct public access.  
+- Configured **WAF rules** to block reconnaissance, injection, and DDoS attempts.
+
+### 🔹 3. Access Control and SSO
+- Implemented **Cloudflare Access** using **GitHub as an SSO provider** (OAuth2).  
+- Created **Zero-Trust policies** based on user identity, device, and session context.  
+- Validated SSO integration by restricting portal access to authorized GitHub organization members.
+
+### 🔹 4. Incident Response and Monitoring
+- Developed a **12-step Incident Response Plan (IRP)** outlining detection, containment, eradication, and recovery phases.  
+- Tested detection workflows via **GuardDuty alerts** and **CloudWatch alarms** simulating brute-force and DDoS behaviors.  
+- Centralized logs through **CloudTrail** for traceability and forensic readiness.
 
 ---
 
-## 📁 Deliverables
+## 📄 Project Deliverables
 | File | Description |
-|------|-------------|
-| [Project Charter](./Project-Charter.pdf) | Defines objectives, stakeholders, and risk strategy. |
-| [Project Scope](./Project-Scope.pdf) | Outlines technical and business requirements. |
-| [Final Report](./Final-Report.pdf) | Full documentation of implementation and outcomes. |
-| [Cloudflare Steps](./Cloudflare-Steps.pdf) | Step-by-step configuration guide. |
-| [Incident Response Plan](./Incident-Response-Plan.pdf) | Detailed playbook for detection and containment. |
-| [Presentation Slides](./Presentation-Slides.pptx) | Final capstone presentation. |
+|------|--------------|
+| [Project-Scope.pdf](./Project-Scope.pdf) | Defines objectives, success criteria, and technical scope |
+| [Project-Proposal.pdf](./Project-Proposal.pdf) | Initial business and technical justification for the Zero-Trust model |
+| [Product-Overview.pdf](./Product-Overview.pdf) | Executive summary of architecture and design choices |
+| [Cloudflare-Configuration-Steps.pdf](./Cloudflare-Configuration-Steps.pdf) | Hands-on guide for Cloudflare DNSSEC, WAF, and Tunnel configuration |
+| [Final-Report.pdf](./Final-Report.pdf) | Complete documentation covering design, results, and risk mitigation |
+| [Final-Presentation-Slides.pptx](./Final-Presentation-Slides.pptx) | Final presentation used during project defense |
+
+---
+
+## 📈 Key Results
+- Reduced attack surface by **approximately 90%** through Cloudflare Tunnel and private network routing.  
+- Achieved **end-to-end encryption** using **TLS 1.3 (Full-Strict)** and **DNSSEC validation**.  
+- Enforced **identity-based access control** with GitHub SSO and Cloudflare Access.  
+- Enabled **proactive monitoring** and alerting through GuardDuty and CloudTrail.  
+- Developed a complete **Incident Response Plan** tested against simulated attacks.
 
 ---
 
 ## 🧠 Skills Demonstrated
-✅ Cloud Security Architecture (AWS, Cloudflare, GoDaddy)  
-✅ Identity & Access Management (SSO, OAuth2)  
-✅ DNSSEC & TLS 1.3 Implementation  
-✅ Zero-Trust Design & Policy Enforcement  
-✅ Incident Response & Threat Detection (GuardDuty, CloudTrail)  
-✅ Technical Documentation & Compliance Writing  
+- **Zero-Trust Architecture Design**  
+- **Cloud Security (AWS EC2, IAM, CloudTrail, GuardDuty)**  
+- **Network Security (WAF, DNSSEC, TLS 1.3)**  
+- **Identity & Access Management (SSO, OAuth2, RBAC)**  
+- **Incident Response Planning & Detection Engineering**  
+- **Technical Documentation & Compliance Writing**
 
 ---
 
-## 📈 Future Enhancements
-- Deploy HAProxy or Load Balancer for redundancy  
-- Integrate Splunk or ELK for SIEM correlation  
-- Add MFA support to GitHub SSO  
-- Automate DNS validation using Terraform  
+## 🚀 Future Enhancements
+- Implement **Terraform automation** for infrastructure provisioning.  
+- Integrate **Splunk or ELK** for SIEM-based correlation and analytics.  
+- Deploy a **multi-region AWS architecture** for disaster recovery.  
+- Add **MFA enforcement** to the GitHub SSO workflow.  
+
+---
+
+## 📚 References
+- [AWS Cloud Security Documentation](https://aws.amazon.com/security/)  
+- [Cloudflare Zero Trust Platform](https://www.cloudflare.com/zero-trust/)  
+- [MITRE ATT&CK Framework](https://attack.mitre.org/)  
+- [OWASP Secure Configuration Guidelines](https://owasp.org/)  
 
 ---
 
 **Author:** *Devarshi Mahadevwala*  
-**Certification:** ISC² CC | CySA+ (In Progress)  
+**Certifications:** ISC² CC | CySA+ (In Progress)  
+*Cloud & Cybersecurity Professional*
