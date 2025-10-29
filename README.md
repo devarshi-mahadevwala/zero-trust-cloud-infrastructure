@@ -6,7 +6,6 @@ Designed to protect high-risk business environments (finance, e-commerce) by enf
 ---
 
 ## 🏗️ Architecture Overview
-![Architecture Diagram](./assets/ArchitectureDiagram.png)
 
 ### Components
 - **AWS EC2 Instance:** Secure hosting for the web service with limited HTTPS access.  
