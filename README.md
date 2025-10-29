@@ -37,12 +37,12 @@ Designed to protect high-risk business environments (finance, e-commerce) by enf
 ## 📁 Deliverables
 | File | Description |
 |------|-------------|
-| [Project Charter](./docs/Project-Charter.pdf) | Defines objectives, stakeholders, and risk strategy. |
-| [Project Scope](./docs/Project-Scope.pdf) | Outlines technical and business requirements. |
-| [Final Report](./docs/Final-Report.pdf) | Full documentation of implementation and outcomes. |
-| [Cloudflare Steps](./docs/Cloudflare-Steps.pdf) | Step-by-step configuration guide. |
-| [Incident Response Plan](./docs/Incident-Response-Plan.pdf) | Detailed playbook for detection and containment. |
-| [Presentation Slides](./docs/Presentation-Slides.pptx) | Final capstone presentation. |
+| [Project Charter](./Project-Charter.pdf) | Defines objectives, stakeholders, and risk strategy. |
+| [Project Scope](./Project-Scope.pdf) | Outlines technical and business requirements. |
+| [Final Report](./Final-Report.pdf) | Full documentation of implementation and outcomes. |
+| [Cloudflare Steps](./Cloudflare-Steps.pdf) | Step-by-step configuration guide. |
+| [Incident Response Plan](./Incident-Response-Plan.pdf) | Detailed playbook for detection and containment. |
+| [Presentation Slides](./Presentation-Slides.pptx) | Final capstone presentation. |
 
 ---
 
